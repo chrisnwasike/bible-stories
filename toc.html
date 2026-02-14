@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="An interactive journey through the New King James Version of the Holy Bible — chapter by chapter, with original artwork, timelines, maps, and visual storytelling.">
+    <meta name="keywords" content="Bible, NKJV, New King James Version, Genesis, Scripture, Christian website, Interactive Bible, Biblical art, Bible study, Christian education">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://chrisnwasike.github.io/bible-stories/">
+    <meta property="og:title" content="The Bible — Brought to Life">
+    <meta property="og:description" content="Experience Scripture chapter by chapter with original artwork, interactive timelines, maps, and visual storytelling.">
+    <meta property="og:image" content="https://chrisnwasike.github.io/bible-stories/images/shared/social-preview.png">
+    <meta property="og:site_name" content="The Bible — Brought to Life">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Bible — Brought to Life">
+    <meta name="twitter:description" content="An interactive NKJV journey through Scripture with art, maps, and visual storytelling.">
+    <meta name="twitter:image" content="https://chrisnwasike.github.io/bible-stories/images/shared/social-preview.png">
+
+    
+    <link rel="icon" href="images/shared/icon.png" sizes="any">
+
+    <!-- PNG Fallbacks -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/shared/icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/shared/icon.png">
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/shared/icon.png">
+
+    <!-- Optional: Web App Manifest -->
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#0e0c09">
+
+    <title>Genesis — Table of Contents</title>
+    <link rel="stylesheet" href="css/common.css">
+    
+</head>
+<body>
+
+    <nav class="site-nav-dark">
+        <a href="index.html">← Home</a>
+        <span class="nav-title">The Bible</span>
+        <a href=""></a>
+    </nav>
+
+<style>
+        /* ── Page ── */
+        .page-wrapper {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ── Hero Banner ── */
+        .toc-hero {
+            text-align: center;
+            padding: var(--space-2xl) var(--space-lg) var(--space-xl);
+            background: linear-gradient(175deg, #1e1a14 0%, #2a2318 60%, #201c15 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .toc-hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 50% 70% at 50% 80%, rgba(184,149,63,0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .toc-hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .toc-book-label {
+            font-family: var(--font-heading);
+            font-size: 12px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: var(--space-sm);
+        }
+
+        .toc-book-title {
+            font-family: var(--font-display);
+            font-size: clamp(40px, 7vw, 72px);
+            font-weight: 400;
+            color: var(--parchment);
+            letter-spacing: 4px;
+            margin-bottom: var(--space-sm);
+        }
+
+        .toc-book-subtitle {
+            font-family: var(--font-body);
+            font-size: clamp(16px, 2vw, 20px);
+            font-style: italic;
+            color: rgba(245, 239, 227, 0.4);
+            max-width: 600px;
+            margin: 0 auto var(--space-md);
+            line-height: 1.7;
+        }
+
+        .toc-divider {
+            width: 80px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 0 auto;
+        }
+
+        .toc-stats {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-xl);
+            margin-top: var(--space-lg);
+        }
+
+        .toc-stat {
+            text-align: center;
+        }
+
+        .toc-stat-num {
+            font-family: var(--font-display);
+            font-size: 32px;
+            color: var(--gold);
+            line-height: 1;
+        }
+
+        .toc-stat-label {
+            font-family: var(--font-heading);
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(245, 239, 227, 0.3);
+            margin-top: 6px;
+        }
+
+        /* ── Main Content ── */
+        .toc-main {
+            flex: 1;
+            padding: var(--space-xl) var(--space-lg) var(--space-2xl);
+        }
+
+        /* ── Section Headings ── */
+        .toc-section {
+            max-width: 960px;
+            margin: 0 auto var(--space-xl);
+        }
+
+        .toc-section-heading {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            margin-bottom: var(--space-lg);
+        }
+
+        .toc-section-heading::before,
+        .toc-section-heading::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--parchment-dark);
+        }
+
+        .toc-section-title {
+            font-family: var(--font-heading);
+            font-size: 12px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--ink-faint);
+            white-space: nowrap;
+        }
+
+        /* ── Chapter Grid ── */
+        .chapter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1px;
+            background: var(--parchment-dark);
+            border: 1px solid var(--parchment-dark);
+        }
+
+        /* ── Chapter Card ── */
+        .chapter-card {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-sm);
+            padding: var(--space-md) var(--space-md);
+            background: var(--parchment-light);
+            text-decoration: none;
+            color: var(--ink);
+            transition: all 0.3s ease;
+        }
+
+        .chapter-card:hover {
+            background: white;
+        }
+
+        .chapter-card.disabled {
+            pointer-events: none;
+        }
+        .chapter-card.disabled:hover {
+            background: var(--parchment-light);
+        }
+
+        .chapter-num {
+            font-family: var(--font-display);
+            font-size: 24px;
+            color: var(--gold);
+            line-height: 1;
+            min-width: 36px;
+            padding-top: 2px;
+        }
+
+        .chapter-card.disabled .chapter-num {
+            color: var(--parchment-dark);
+        }
+
+        .chapter-details {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .chapter-title {
+            font-family: var(--font-heading);
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--ink);
+            margin-bottom: 3px;
+            letter-spacing: 0.3px;
+        }
+
+        .chapter-card.disabled .chapter-title {
+            color: var(--ink-faint);
+        }
+
+        .chapter-desc {
+            font-family: var(--font-body);
+            font-size: 14px;
+            color: var(--ink-faint);
+            line-height: 1.5;
+        }
+
+        .chapter-card.disabled .chapter-desc {
+            color: var(--parchment-dark);
+        }
+
+        .chapter-badge {
+            flex-shrink: 0;
+            align-self: center;
+        }
+
+        .badge-live {
+            font-family: var(--font-heading);
+            font-size: 9px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
+            padding: 3px 10px;
+            border: 1px solid rgba(184, 149, 63, 0.35);
+            border-radius: 2px;
+        }
+
+        .badge-soon {
+            font-family: var(--font-heading);
+            font-size: 9px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--parchment-dark);
+        }
+
+        /* Hover effect for live cards */
+        .chapter-card.live:hover {
+            background: white;
+            box-shadow: 0 4px 20px var(--shadow);
+        }
+        .chapter-card.live:hover .chapter-title {
+            color: var(--gold);
+        }
+        .chapter-card.live:hover .badge-live {
+            background: var(--gold);
+            color: white;
+        }
+
+        /* ── Footer (dark) ── */
+        .site-footer-dark {
+            text-align: center;
+            padding: var(--space-lg) var(--space-md);
+            border-top: 1px solid rgba(245,239,227,0.05);
+            background: var(--parchment);
+            color: var(--ink-faint);
+            font-family: var(--font-ui);
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+        .site-footer-dark .footer-ornament {
+            display: block;
+            margin-bottom: var(--space-sm);
+            color: var(--gold);
+            font-size: 16px;
+            letter-spacing: 8px;
+            opacity: 0.5;
+        }
+
+        @media (max-width: 768px) {
+            .toc-stats { gap: var(--space-lg); }
+            .chapter-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+
+<div class="page-wrapper">
+
+        <!-- ═══ HERO ═══ -->
+        <header class="toc-hero">
+            <div class="toc-hero-content">
+                <div class="toc-book-label">The First Book of Moses Called</div>
+                <h1 class="toc-book-title">Genesis</h1>
+                <p class="toc-book-subtitle">"In the beginning God created the heavens and the earth."</p>
+                <div class="toc-divider"></div>
+                <div class="toc-stats">
+                    <div class="toc-stat">
+                        <div class="toc-stat-num">50</div>
+                        <div class="toc-stat-label">Chapters</div>
+                    </div>
+                    <div class="toc-stat">
+                        <div class="toc-stat-num">2</div>
+                        <div class="toc-stat-label">Complete</div>
+                    </div>
+                    <div class="toc-stat">
+                        <div class="toc-stat-num">48</div>
+                        <div class="toc-stat-label">Remaining</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ═══ TABLE OF CONTENTS ═══ -->
+        <main class="toc-main">
+
+            <!-- Primeval History (1–11) -->
+            <section class="toc-section">
+                <div class="toc-section-heading">
+                    <span class="toc-section-title">Primeval History · Chapters 1–11</span>
+                </div>
+                <div class="chapter-grid" id="primevalGrid"></div>
+            </section>
+
+            <!-- Patriarchal Narratives (12–36) -->
+            <section class="toc-section">
+                <div class="toc-section-heading">
+                    <span class="toc-section-title">Patriarchal Narratives · Chapters 12–36</span>
+                </div>
+                <div class="chapter-grid" id="patriarchGrid"></div>
+            </section>
+
+            <!-- Joseph Narrative (37–50) -->
+            <section class="toc-section">
+                <div class="toc-section-heading">
+                    <span class="toc-section-title">The Joseph Narrative · Chapters 37–50</span>
+                </div>
+                <div class="chapter-grid" id="josephGrid"></div>
+            </section>
+
+        </main>
+
+        
+
+    </div>
+
+    <script>
+        // Chapter data: [number, title, brief description, status]
+        // status: "live" | "soon"
+        const chapters = [
+            // ── Primeval History ──
+            [1,  "The Creation",               "God creates the heavens, earth, and all living things in six days",  "live"],
+            [2,  "The Garden of Eden",          "God forms man, plants Eden, and creates woman",                     "soon"],
+            [3,  "The Fall of Man",             "The serpent deceives Eve; sin enters the world",                    "soon"],
+            [4,  "Cain and Abel",               "The first murder; Cain's exile and the line of Cain",              "soon"],
+            [5,  "The Patriarch Timeline",      "Adam to Noah — generations, lifespans, and overlapping lives",      "live"],
+            [6,  "Wickedness and the Ark",       "God grieves over mankind; Noah is commanded to build an ark",       "soon"],
+            [7,  "The Great Flood",             "Noah enters the ark; the floodwaters cover the earth",             "soon"],
+            [8,  "The Waters Recede",           "The dove, the olive branch, and God's promise",                    "soon"],
+            [9,  "God's Covenant with Noah",    "The rainbow covenant; Noah's vineyard and Ham's disgrace",         "soon"],
+            [10, "The Table of Nations",        "The descendants of Shem, Ham, and Japheth spread across the earth","soon"],
+            [11, "The Tower of Babel",          "One language scattered; the genealogy from Shem to Abram",         "soon"],
+
+            // ── Patriarchal Narratives ──
+            [12, "The Call of Abram",           "God calls Abram to leave Ur; Abram journeys to Canaan and Egypt",  "soon"],
+            [13, "Abram and Lot Separate",      "Lot chooses the Jordan plain; God reaffirms the promise to Abram", "soon"],
+            [14, "Abram Rescues Lot",           "War of the kings; Abram meets Melchizedek",                        "soon"],
+            [15, "God's Covenant with Abram",   "The covenant of the pieces; God promises descendants like the stars","soon"],
+            [16, "Hagar and Ishmael",           "Sarai gives Hagar to Abram; Ishmael is born",                     "soon"],
+            [17, "The Covenant of Circumcision","Abram becomes Abraham; the sign of the covenant",                  "soon"],
+            [18, "Three Visitors",              "Abraham entertains angels; the fate of Sodom is debated",          "soon"],
+            [19, "Sodom and Gomorrah",          "Fire and brimstone; Lot escapes; his wife looks back",             "soon"],
+            [20, "Abraham and Abimelech",       "Abraham deceives Abimelech about Sarah",                           "soon"],
+            [21, "Isaac Is Born",               "The promised son arrives; Hagar and Ishmael are sent away",        "soon"],
+            [22, "The Binding of Isaac",        "God tests Abraham on Mount Moriah",                                "soon"],
+            [23, "Sarah's Death and Burial",    "Abraham purchases the cave of Machpelah",                          "soon"],
+            [24, "A Bride for Isaac",           "Abraham's servant finds Rebekah at the well",                      "soon"],
+            [25, "Abraham's Death; Jacob & Esau","The birthright sold for a bowl of stew",                          "soon"],
+            [26, "Isaac and Abimelech",         "Isaac prospers in Gerar; wells of contention",                     "soon"],
+            [27, "Jacob Steals the Blessing",   "Rebekah's plan; Isaac blesses Jacob instead of Esau",              "soon"],
+            [28, "Jacob's Ladder",              "The dream at Bethel; a stairway reaching to heaven",               "soon"],
+            [29, "Jacob Meets Rachel",          "Seven years of labor for love; Leah is given first",               "soon"],
+            [30, "Jacob's Children",            "The twelve tribes begin; Jacob's flocks increase",                 "soon"],
+            [31, "Jacob Flees from Laban",      "Twenty years end; the covenant at Mizpah",                         "soon"],
+            [32, "Wrestling with God",          "Jacob wrestles at Peniel and is renamed Israel",                   "soon"],
+            [33, "Jacob Meets Esau",            "The brothers reconcile after twenty years apart",                  "soon"],
+            [34, "The Dishonor of Dinah",       "Simeon and Levi avenge their sister",                              "soon"],
+            [35, "God Renews the Covenant",     "Return to Bethel; Rachel dies giving birth to Benjamin",           "soon"],
+            [36, "Esau's Descendants",          "The generations of Esau; the chiefs of Edom",                      "soon"],
+
+            // ── Joseph Narrative ──
+            [37, "Joseph's Dreams",             "The coat of many colors; Joseph is sold into slavery",              "soon"],
+            [38, "Judah and Tamar",             "Tamar's bold act secures the line of Judah",                       "soon"],
+            [39, "Joseph in Potiphar's House",  "Falsely accused, Joseph is cast into prison",                      "soon"],
+            [40, "The Butler and the Baker",    "Joseph interprets two dreams in prison",                            "soon"],
+            [41, "Pharaoh's Dreams",            "Seven years of plenty and seven of famine; Joseph rises to power", "soon"],
+            [42, "Joseph's Brothers in Egypt",  "Ten brothers bow before the brother they sold",                    "soon"],
+            [43, "The Second Journey",          "Benjamin goes to Egypt; Joseph's feast",                            "soon"],
+            [44, "The Silver Cup",              "Judah pleads for Benjamin's life",                                  "soon"],
+            [45, "Joseph Reveals Himself",      "\"I am Joseph!\" — weeping, reconciliation, and wonder",           "soon"],
+            [46, "Jacob Goes to Egypt",         "Israel journeys south; the family is reunited",                    "soon"],
+            [47, "Israel Settles in Goshen",    "Jacob blesses Pharaoh; the famine deepens",                        "soon"],
+            [48, "Jacob Blesses Ephraim & Manasseh", "The younger receives the greater blessing",                   "soon"],
+            [49, "Jacob Blesses His Sons",      "Prophetic blessings over the twelve tribes",                       "soon"],
+            [50, "Death and Burial of Jacob",   "Joseph forgives his brothers; God meant it for good",              "soon"],
+        ];
+
+        // Map to grids
+        const primevalGrid   = document.getElementById('primevalGrid');
+        const patriarchGrid  = document.getElementById('patriarchGrid');
+        const josephGrid     = document.getElementById('josephGrid');
+
+        chapters.forEach(([num, title, desc, status]) => {
+            const isLive = status === 'live';
+            const tag = isLive ? 'a' : 'div';
+            const card = document.createElement(tag);
+
+            card.className = `chapter-card ${isLive ? 'live' : 'disabled'}`;
+            if (isLive) card.href = `01-genesis-${String(num).padStart(2,'0')}.html`;
+
+            card.innerHTML = `
+                <div class="chapter-num">${num}</div>
+                <div class="chapter-details">
+                    <div class="chapter-title">${title}</div>
+                    <div class="chapter-desc">${desc}</div>
+                </div>
+                <div class="chapter-badge">
+                    ${isLive
+                        ? '<span class="badge-live">Live</span>'
+                        : '<span class="badge-soon">Soon</span>'}
+                </div>
+            `;
+
+            if (num <= 11)       primevalGrid.appendChild(card);
+            else if (num <= 36)  patriarchGrid.appendChild(card);
+            else                 josephGrid.appendChild(card);
+        });
+    </script>
+    <footer class="site-footer">
+        <span class="footer-ornament">✦ ✦ ✦</span>
+        Scripture from the New King James Version®. Copyright © 1982 by Thomas Nelson.<br>
+        Developed by <a href="about.html#chrisnwasike">Chris Nwasike</a>
+    </footer>
+
+
+</body>
+</html>

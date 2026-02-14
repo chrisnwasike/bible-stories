@@ -1,0 +1,204 @@
+/* ═══════════════════════════════════════════════════
+   Bible Stories — Shared Design System
+   Aesthetic: Ancient manuscript × modern editorial
+   Developed by Chris Nwasike
+   ═══════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&family=Cinzel+Decorative:wght@400;700&display=swap');
+
+:root {
+    /* ── Palette ── */
+    --parchment:        #f5efe3;
+    --parchment-light:  #faf7f0;
+    --parchment-dark:   #e8dfd0;
+    --ink:              #2c2419;
+    --ink-light:        #5a4d3a;
+    --ink-faint:        #8a7d6b;
+    --gold:             #b8953f;
+    --gold-light:       #d4b15a;
+    --gold-faint:       rgba(184, 149, 63, 0.15);
+    --crimson:          #8b2230;
+    --crimson-light:    #a83245;
+    --sky:              #4a6fa5;
+    --earth:            #6b5842;
+    --shadow:           rgba(44, 36, 25, 0.12);
+    --shadow-deep:      rgba(44, 36, 25, 0.25);
+
+    /* ── Typography ── */
+    --font-display:     'Cinzel Decorative', 'Cinzel', serif;
+    --font-heading:     'Cinzel', serif;
+    --font-body:        'EB Garamond', 'Cormorant Garamond', serif;
+    --font-ui:          'Cormorant Garamond', serif;
+
+    /* ── Spacing ── */
+    --space-xs:   8px;
+    --space-sm:   16px;
+    --space-md:   24px;
+    --space-lg:   40px;
+    --space-xl:   64px;
+    --space-2xl:  100px;
+
+    /* ── Layout ── */
+    --max-width:  1200px;
+    --radius:     4px;
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ── Base ── */
+body {
+    font-family: var(--font-body);
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--ink);
+    background: var(--parchment);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Subtle paper texture via noise */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ═══════════════════════════════
+   Shared Navigation — Dark variant
+   Used on TOC pages and chapter pages
+   ═══════════════════════════════ */
+.site-nav-dark {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-sm) var(--space-lg);
+    background: #151210;
+    border-bottom: 1px solid rgba(184, 149, 63, 0.08);
+}
+.site-nav-dark a {
+    font-family: var(--font-heading);
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(245, 239, 227, 0.4);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.site-nav-dark a:hover {
+    color: var(--gold);
+}
+.site-nav-dark .nav-title {
+    font-family: var(--font-display);
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: rgba(245, 239, 227, 0.55);
+}
+body.print-mode .site-nav-dark {
+    display: none;
+}
+
+/* ═══════════════════════════════
+   Shared Footer — Light variant
+   Default parchment-background footer
+   ═══════════════════════════════ */
+.site-footer {
+    text-align: center;
+    padding: var(--space-lg) var(--space-md);
+    border-top: 1px solid var(--parchment-dark);
+    margin-top: var(--space-xl);
+    color: var(--ink-faint);
+    font-family: var(--font-ui);
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+.site-footer .footer-ornament {
+    display: block;
+    margin: 0 auto var(--space-sm);
+    color: var(--gold);
+    font-size: 20px;
+    letter-spacing: 8px;
+}
+
+/* ═══════════════════════════════
+   Shared Footer — Dark variant
+   For dark-background pages (index)
+   ═══════════════════════════════ */
+.site-footer-dark {
+    text-align: center;
+    padding: var(--space-lg) var(--space-md);
+    background: #0e0c09;
+    color: rgba(245, 239, 227, 0.25);
+    font-family: var(--font-ui);
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+.site-footer-dark .footer-ornament {
+    display: block;
+    margin-bottom: var(--space-sm);
+    color: rgba(184, 149, 63, 0.4);
+    font-size: 16px;
+    letter-spacing: 8px;
+}
+
+/* ═══════════════════════════════
+   Footer Links
+   ═══════════════════════════════ */
+footer a:link,
+footer a:visited {
+    text-decoration: none;
+    color: #332202;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+.site-footer-dark a:link,
+.site-footer-dark a:visited {
+    color: rgba(184, 149, 63, 0.5);
+}
+.site-footer-dark a:hover {
+    color: var(--gold);
+}
+
+/* ═══════════════════════════════
+   Utility Classes
+   ═══════════════════════════════ */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+}
+.text-center { text-align: center; }
+.text-gold   { color: var(--gold); }
+.text-faint  { color: var(--ink-faint); }
+
+.ornament {
+    display: block;
+    text-align: center;
+    color: var(--gold);
+    font-size: 18px;
+    letter-spacing: 10px;
+    margin: var(--space-md) 0;
+    user-select: none;
+}
+
+/* ═══════════════════════════════
+   Responsive
+   ═══════════════════════════════ */
+@media (max-width: 768px) {
+    :root {
+        --space-lg: 24px;
+        --space-xl: 40px;
+        --space-2xl: 64px;
+    }
+    body { font-size: 16px; }
+    .site-nav-dark { padding: var(--space-xs) var(--space-sm); }
+}

@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="An interactive journey through the New King James Version of the Holy Bible — chapter by chapter, with original artwork, timelines, maps, and visual storytelling.">
+    <meta name="keywords" content="Bible, NKJV, New King James Version, Genesis, Scripture, Christian website, Interactive Bible, Biblical art, Bible study, Christian education">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://chrisnwasike.github.io/bible-stories/">
+    <meta property="og:title" content="The Bible — Brought to Life">
+    <meta property="og:description" content="Experience Scripture chapter by chapter with original artwork, interactive timelines, maps, and visual storytelling.">
+    <meta property="og:image" content="https://chrisnwasike.github.io/bible-stories/images/shared/social-preview.png">
+    <meta property="og:site_name" content="The Bible — Brought to Life">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Bible — Brought to Life">
+    <meta name="twitter:description" content="An interactive NKJV journey through Scripture with art, maps, and visual storytelling.">
+    <meta name="twitter:image" content="https://chrisnwasike.github.io/bible-stories/images/shared/social-preview.png">
+
+    
+    <link rel="icon" href="images/shared/icon.png" sizes="any">
+
+    <!-- PNG Fallbacks -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/shared/icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/shared/icon.png">
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/shared/icon.png">
+
+    <!-- Optional: Web App Manifest -->
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#0e0c09">
+
+    <title>Genesis 5 — The Patriarch Timeline</title>
+    <link rel="stylesheet" href="css/common.css">
+    
+</head>
+<body>
+
+    <nav class="site-nav-dark">
+        <a href="toc.html">← Genesis</a>
+        <span class="nav-title">Chapter 5</span>
+        <a href="toc.html">Contents</a>
+    </nav>
+
+<style>
+        body { padding: 0; background: var(--parchment); }
+        body.print-mode { background: white; }
+        body.print-mode::before { display: none; }
+
+        /* ── Chapter Hero ── */
+        .chapter-hero {
+            text-align: center;
+            padding: var(--space-xl) var(--space-lg) var(--space-lg);
+            background: linear-gradient(175deg, #1e1a14 0%, #2a2318 60%, #201c15 100%);
+            position: relative; overflow: hidden;
+        }
+        .chapter-hero::after {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse 50% 80% at 50% 90%, rgba(184,149,63,0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        body.print-mode .chapter-hero { background: white; padding: 20px; }
+        .chapter-hero-content { position: relative; z-index: 1; }
+        .chapter-label {
+            font-family: var(--font-heading); font-size: 12px; letter-spacing: 5px;
+            text-transform: uppercase; color: var(--gold); margin-bottom: var(--space-xs);
+        }
+        body.print-mode .chapter-label { color: #000; }
+        .chapter-title {
+            font-family: var(--font-display); font-size: clamp(28px, 5vw, 48px);
+            font-weight: 400; color: var(--parchment); letter-spacing: 3px; margin-bottom: var(--space-xs);
+        }
+        body.print-mode .chapter-title { color: #000; font-size: 28px; }
+        .chapter-subtitle {
+            font-family: var(--font-body); font-size: 17px;
+            color: rgba(245,239,227,0.4); font-style: italic;
+        }
+        body.print-mode .chapter-subtitle { color: #666; }
+
+        /* ── Main ── */
+        .chapter-content { max-width: 1500px; margin: 0 auto; padding: var(--space-lg) var(--space-lg) var(--space-xl); }
+        body.print-mode .chapter-content { padding: 20px; }
+
+        /* ── Chronology Selector ── */
+        .chronology-selector { text-align: center; margin-bottom: var(--space-lg); }
+        .chronology-label {
+            font-family: var(--font-heading); font-size: 12px; letter-spacing: 3px;
+            text-transform: uppercase; color: var(--ink-faint); margin-bottom: 14px;
+        }
+        body.print-mode .chronology-label { color: #000; }
+        .chronology-buttons { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+        .chronology-btn {
+            padding: 10px 24px; background: transparent; color: var(--gold);
+            border: 1.5px solid rgba(184,149,63,0.3); font-family: var(--font-heading);
+            font-size: 13px; letter-spacing: 1px; cursor: pointer; transition: all 0.3s ease;
+        }
+        .chronology-btn:hover { background: rgba(184,149,63,0.08); border-color: var(--gold); }
+        .chronology-btn.active { background: var(--gold); color: white; border-color: var(--gold); }
+        body.print-mode .chronology-btn { border-color: #000; color: #000; }
+        body.print-mode .chronology-btn.active { background: #000; color: white; }
+        .chronology-note {
+            text-align: center; margin-top: 10px; font-family: var(--font-body);
+            font-size: 14px; color: var(--ink-faint); font-style: italic;
+        }
+
+        /* ── Notable Facts ── */
+        .notable-facts {
+            background: var(--parchment-light); border-left: 3px solid var(--gold);
+            padding: 24px 28px; margin-bottom: var(--space-lg); box-shadow: 0 2px 12px var(--shadow);
+        }
+        body.print-mode .notable-facts { background: #f9f9f9; border-color: #000; box-shadow: none; }
+        .notable-facts-title {
+            font-family: var(--font-heading); font-size: 14px; letter-spacing: 3px;
+            text-transform: uppercase; color: var(--gold); margin-bottom: 16px;
+        }
+        .notable-facts-title::before { content: "✦ "; font-size: 12px; }
+        body.print-mode .notable-facts-title { color: #000; }
+        body.print-mode .notable-facts-title::before { content: "★ "; }
+        .notable-facts-list { list-style: none; }
+        .notable-fact {
+            padding: 10px 0; color: var(--ink-light); font-family: var(--font-body);
+            font-size: 16px; line-height: 1.6; border-bottom: 1px solid var(--parchment-dark);
+        }
+        .notable-fact:last-child { border-bottom: none; }
+        .notable-fact strong { color: var(--ink); font-weight: 600; }
+        body.print-mode .notable-fact { color: #333; border-bottom-color: #ddd; }
+        body.print-mode .notable-fact strong { color: #000; }
+
+        /* ── Controls ── */
+        .controls { display: flex; justify-content: center; gap: 16px; margin-bottom: var(--space-lg); flex-wrap: wrap; }
+        body.print-mode .controls { display: none; }
+        .ctrl-btn {
+            padding: 10px 24px; background: transparent; color: var(--ink-faint);
+            border: 1px solid var(--parchment-dark); font-family: var(--font-heading);
+            font-size: 12px; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: all 0.3s ease;
+        }
+        .ctrl-btn:hover { border-color: var(--gold); color: var(--gold); }
+
+        /* ── Portrait Gallery ── */
+        .gallery-title {
+            text-align: center; font-family: var(--font-heading); font-size: 12px;
+            letter-spacing: 4px; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 16px;
+        }
+        body.print-mode .gallery-title { color: #000; }
+        .portrait-gallery {
+            display: grid; grid-template-columns: repeat(10, 1fr); gap: 6px;
+            margin: 0 0 var(--space-xl) 0; padding: 28px 20px;
+            background: linear-gradient(160deg, #1b1510 0%, #2a2017 40%, #1e1812 100%);
+            border-radius: var(--radius);
+            box-shadow: 0 16px 48px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.03);
+        }
+        body.print-mode .portrait-gallery { background: #eee; box-shadow: none; }
+        .portrait-card {
+            text-align: center; cursor: pointer;
+            transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            padding: 8px 4px; border-radius: 6px;
+        }
+        .portrait-card:hover { transform: translateY(-5px); background: rgba(255,255,255,0.05); }
+        .portrait-card.active { background: rgba(184,149,63,0.1); box-shadow: 0 0 16px rgba(184,149,63,0.25); }
+        .portrait-img-wrapper {
+            width: 80px; height: 96px; margin: 0 auto 6px; border-radius: 4px;
+            overflow: hidden; border: 2px solid rgba(255,255,255,0.12);
+            box-shadow: 0 4px 14px rgba(0,0,0,0.5); transition: all 0.35s ease;
+        }
+        .portrait-card:hover .portrait-img-wrapper { border-color: rgba(184,149,63,0.45); box-shadow: 0 0 20px rgba(184,149,63,0.25); }
+        .portrait-card.active .portrait-img-wrapper { border-color: var(--gold); box-shadow: 0 0 24px rgba(184,149,63,0.4); }
+        .portrait-bg { width: 100%; height: 100%; background-size: cover; background-position: center 20%; transition: transform 0.4s ease; }
+        .portrait-card:hover .portrait-bg { transform: scale(1.1); }
+        .portrait-label { font-family: var(--font-heading); font-size: 11px; color: rgba(255,255,255,0.75); margin-bottom: 1px; letter-spacing: 0.5px; }
+        body.print-mode .portrait-label { color: #000; }
+        .portrait-years { font-family: var(--font-body); font-size: 10px; color: rgba(255,255,255,0.3); }
+        body.print-mode .portrait-years { color: #666; }
+
+        /* ── Timeline ── */
+        .timeline-container { position: relative; margin: var(--space-lg) 0; padding: 80px 0; }
+        .year-scale { position: absolute; top: 20px; left: 0; right: 0; height: 40px; border-bottom: 1.5px solid var(--parchment-dark); }
+        body.print-mode .year-scale { border-bottom-color: #000; }
+        .year-marker { position: absolute; top: 0; transform: translateX(-50%); }
+        .year-tick { width: 1.5px; height: 10px; background: var(--ink-faint); margin: 0 auto; opacity: 0.4; }
+        body.print-mode .year-tick { background: #000; opacity: 1; }
+        .year-label { font-family: var(--font-heading); font-size: 11px; color: var(--ink-faint); margin-top: 4px; letter-spacing: 0.5px; }
+        body.print-mode .year-label { color: #000; }
+        .timeline-bars { position: relative; margin-top: 20px; }
+
+        /* ── Patriarch Bars ── */
+        .patriarch-bar {
+            position: absolute; height: 44px;
+            background: linear-gradient(135deg, var(--earth) 0%, #8a7356 100%);
+            border-radius: var(--radius); cursor: pointer; transition: all 0.3s ease;
+            box-shadow: 0 2px 8px var(--shadow); display: flex; align-items: center; padding: 0 2%;
+        }
+        .patriarch-bar:hover { transform: translateY(-3px); box-shadow: 0 6px 20px var(--shadow-deep); z-index: 10; }
+        body.print-mode .patriarch-bar { background: #e0e0e0; border: 1.5px solid #000; box-shadow: none; }
+        body.print-mode .patriarch-bar:hover { transform: none; box-shadow: none; }
+        .patriarch-bar.selected { background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%); box-shadow: 0 6px 24px rgba(184,149,63,0.35); z-index: 15; }
+        body.print-mode .patriarch-bar.selected { background: #bbb; border-color: #000; box-shadow: none; }
+        .patriarch-bar.faded { opacity: 0.25; filter: grayscale(0.4); }
+        .patriarch-bar.overlapping {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%) !important;
+            box-shadow: 0 0 20px rgba(184,149,63,0.6), 0 0 40px rgba(184,149,63,0.3) !important;
+            animation: glow 2.5s ease-in-out infinite; z-index: 12 !important; transform: scale(1.03);
+        }
+        body.print-mode .patriarch-bar.overlapping { background: #ddd !important; border-style: dashed; box-shadow: none !important; animation: none; transform: none; }
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(184,149,63,0.6), 0 0 40px rgba(184,149,63,0.3); }
+            50% { box-shadow: 0 0 30px rgba(184,149,63,0.8), 0 0 55px rgba(184,149,63,0.5); }
+        }
+        .patriarch-name {
+            font-family: var(--font-heading); font-weight: 500; color: #fff; font-size: 14px;
+            white-space: nowrap; text-shadow: 0 1px 3px rgba(0,0,0,0.6); letter-spacing: 0.5px;
+        }
+        body.print-mode .patriarch-name { color: #000; text-shadow: none; }
+
+        /* ── Bar Avatars ── */
+        .bar-avatar { width: 32px; height: 32px; border-radius: 50%; overflow: hidden; flex-shrink: 0; margin-right: 8px; border: 1.5px solid rgba(255,255,255,0.35); box-shadow: 0 2px 6px rgba(0,0,0,0.3); }
+        .bar-avatar-bg { width: 100%; height: 100%; background-size: cover; background-position: center 20%; }
+        body.print-mode .bar-avatar { border-color: #666; }
+
+        /* ── Flood Marker ── */
+        .flood-marker { position: absolute; top: -20px; bottom: -40px; width: 2px; background: var(--crimson); z-index: 5; box-shadow: 0 0 8px rgba(139,34,48,0.3); }
+        body.print-mode .flood-marker { background: #000; box-shadow: none; }
+        .flood-label {
+            position: absolute; top: -50px; left: 50%; transform: translateX(-50%);
+            background: var(--crimson); color: white; padding: 7px 16px;
+            font-family: var(--font-heading); font-size: 12px; letter-spacing: 1px;
+            font-weight: 500; white-space: nowrap; box-shadow: 0 4px 12px rgba(139,34,48,0.25);
+        }
+        body.print-mode .flood-label { background: #000; box-shadow: none; }
+
+        /* ── Tooltip ── */
+        .tooltip {
+            position: fixed; background: rgba(30,28,24,0.95); color: var(--parchment);
+            padding: 16px 20px; border-radius: 8px; font-family: var(--font-body); font-size: 15px;
+            pointer-events: none; z-index: 1000; opacity: 0; transition: opacity 0.2s ease;
+            box-shadow: 0 8px 28px rgba(0,0,0,0.4); backdrop-filter: blur(10px);
+            border: 1px solid rgba(184,149,63,0.15);
+        }
+        body.print-mode .tooltip { display: none; }
+        .tooltip.visible { opacity: 1; }
+        .tooltip-portrait { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+        .tooltip-avatar { width: 48px; height: 48px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 2px solid var(--gold); box-shadow: 0 2px 8px rgba(0,0,0,0.4); }
+        .tooltip-avatar-bg { width: 100%; height: 100%; background-size: cover; background-position: center 20%; }
+        .tooltip-name { font-family: var(--font-heading); font-size: 16px; font-weight: 500; color: var(--gold); letter-spacing: 1px; }
+        .tooltip-info { line-height: 1.6; }
+
+        /* ── Side Panel ── */
+        .side-panel {
+            position: fixed; right: -100%; top: 0; width: 520px; max-width: 90%; height: 100vh;
+            background: var(--parchment-light); box-shadow: -4px 0 30px var(--shadow-deep);
+            padding: 40px 30px; transition: right 0.4s ease; z-index: 100; overflow-y: auto;
+        }
+        body.print-mode .side-panel { display: none; }
+        .side-panel.visible { right: 0; }
+        .panel-header { font-family: var(--font-display); font-size: 28px; color: var(--ink); margin-bottom: 6px; letter-spacing: 1px; }
+        .panel-subheader { font-family: var(--font-heading); font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--ink-faint); margin-bottom: var(--space-md); }
+        .panel-portrait { display: flex; align-items: center; gap: 20px; margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--parchment-dark); }
+        .panel-portrait-img { width: 88px; height: 88px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 3px solid var(--gold); box-shadow: 0 4px 16px var(--shadow); }
+        .panel-portrait-bg { width: 100%; height: 100%; background-size: cover; background-position: center 20%; }
+        .panel-portrait-info .panel-years { font-family: var(--font-body); font-size: 15px; color: var(--ink-faint); margin-top: 4px; }
+        .panel-portrait-info .panel-age { font-family: var(--font-display); font-size: 26px; color: var(--gold); }
+        .close-panel { position: absolute; top: 20px; right: 20px; background: none; border: none; font-size: 28px; color: var(--ink-faint); cursor: pointer; transition: color 0.2s; line-height: 1; }
+        .close-panel:hover { color: var(--ink); }
+
+        /* ── Contemporary List ── */
+        .contemporary-list { list-style: none; }
+        .contemporary-item { display: flex; align-items: center; gap: 14px; padding: 14px 16px; background: var(--parchment); border-left: 3px solid var(--gold); margin-bottom: 10px; transition: all 0.2s ease; }
+        .contemporary-item:hover { background: white; transform: translateX(3px); }
+        .contemporary-avatar { width: 38px; height: 38px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 1.5px solid var(--gold); }
+        .contemporary-avatar-bg { width: 100%; height: 100%; background-size: cover; background-position: center 20%; }
+        .contemporary-info { flex: 1; }
+        .contemporary-name { font-family: var(--font-heading); font-weight: 500; color: var(--ink); font-size: 14px; margin-bottom: 2px; letter-spacing: 0.3px; }
+        .contemporary-years { font-family: var(--font-body); font-size: 13px; color: var(--ink-faint); }
+
+        /* ── Legend ── */
+        .legend { display: flex; justify-content: center; gap: 40px; margin-top: var(--space-xl); padding: 20px; background: var(--parchment-light); border: 1px solid var(--parchment-dark); }
+        body.print-mode .legend { background: #f9f9f9; border-color: #ddd; }
+        .legend-item { display: flex; align-items: center; gap: 10px; }
+        .legend-color { width: 36px; height: 16px; border-radius: 2px; }
+        .legend-color.earth { background: linear-gradient(135deg, var(--earth) 0%, #8a7356 100%); }
+        .legend-color.gold { background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%); }
+        .legend-color.red { width: 2px; height: 24px; background: var(--crimson); }
+        body.print-mode .legend-color.earth { background: #e0e0e0; border: 1px solid #000; }
+        body.print-mode .legend-color.gold { background: #bbb; border: 1px solid #000; }
+        body.print-mode .legend-color.red { background: #000; }
+        .legend-text { font-family: var(--font-heading); font-size: 12px; letter-spacing: 1px; color: var(--ink-faint); }
+        body.print-mode .legend-text { color: #000; }
+
+        /* ── Chapter Footer ── */
+        .chapter-footer { text-align: center; margin-top: var(--space-lg); padding-top: var(--space-md); border-top: 1px solid var(--parchment-dark); font-family: var(--font-ui); font-size: 13px; color: var(--ink-faint); letter-spacing: 0.5px; }
+
+        .overlap-info { text-align: center; margin: 16px 0; padding: 14px 20px; background: var(--gold-faint); border: 1px solid rgba(184,149,63,0.3); font-family: var(--font-body); font-size: 15px; color: var(--ink-light); display: none; }
+        .overlap-info.visible { display: block; }
+        body.print-mode .overlap-info { display: none; }
+
+        /* ── Responsive ── */
+        @media (max-width: 1200px) {
+            .chapter-content { padding: var(--space-md); }
+            .portrait-gallery { grid-template-columns: repeat(5, 1fr); }
+            .side-panel { width: 340px; }
+        }
+        @media (max-width: 768px) {
+            .portrait-gallery { grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 14px; }
+            .portrait-img-wrapper { width: 60px; height: 72px; }
+            .legend { gap: 20px; flex-wrap: wrap; }
+        }
+        @media print {
+            body { background: white !important; }
+            .chapter-hero { background: white !important; }
+            .chapter-title { color: #000 !important; }
+        }
+    </style>
+
+<header class="chapter-hero">
+        <div class="chapter-hero-content">
+            <div class="chapter-label">Genesis · Chapter 5</div>
+            <h1 class="chapter-title">The Patriarch Timeline</h1>
+            <p class="chapter-subtitle">Adam to Noah — generations, lifespans, and overlapping lives</p>
+        </div>
+    </header>
+
+    <main class="chapter-content">
+        <div class="chronology-selector">
+            <div class="chronology-label">Select Textual Tradition</div>
+            <div class="chronology-buttons">
+                <button class="chronology-btn active" data-chronology="masoretic">Masoretic Text</button>
+                <button class="chronology-btn" data-chronology="septuagint">Septuagint (LXX)</button>
+                <button class="chronology-btn" data-chronology="samaritan">Samaritan Pentateuch</button>
+            </div>
+            <div class="chronology-note" id="chronologyNote">Standard Hebrew Bible chronology — most widely used</div>
+        </div>
+
+        <div class="notable-facts">
+            <div class="notable-facts-title">Notable Facts</div>
+            <ul class="notable-facts-list" id="notableFacts"></ul>
+        </div>
+
+        <div class="controls">
+            <button class="ctrl-btn" id="exportBtn">Download as PDF</button>
+            <button class="ctrl-btn" id="printBtn">Print-Friendly View</button>
+        </div>
+
+        <div class="gallery-title">The Patriarchs of Genesis 5</div>
+        <div class="portrait-gallery" id="portraitGallery"></div>
+
+        <div class="overlap-info" id="overlapInfo">Golden glowing bars indicate patriarchs who were alive at the same time</div>
+
+        <div class="timeline-container">
+            <div class="year-scale" id="yearScale"></div>
+            <div class="timeline-bars" id="timelineBars"></div>
+        </div>
+
+        <div class="legend">
+            <div class="legend-item"><div class="legend-color earth"></div><div class="legend-text">Lifespan</div></div>
+            <div class="legend-item"><div class="legend-color gold"></div><div class="legend-text">Selected</div></div>
+            <div class="legend-item"><div class="legend-color red"></div><div class="legend-text">The Flood</div></div>
+        </div>
+
+        <div class="chapter-footer">Data derived from Genesis Chapter 5 · <span id="currentChronology">Masoretic Text</span> · New King James Version</div>
+    </main>
+
+    
+
+    <div class="tooltip" id="tooltip">
+        <div class="tooltip-portrait">
+            <div class="tooltip-avatar"><div class="tooltip-avatar-bg" id="tooltipAvatar"></div></div>
+            <div class="tooltip-name" id="tooltipName"></div>
+        </div>
+        <div class="tooltip-info" id="tooltipInfo"></div>
+    </div>
+
+    <div class="side-panel" id="sidePanel">
+        <button class="close-panel" id="closePanel">&times;</button>
+        <div class="panel-header" id="panelHeader"></div>
+        <div class="panel-subheader">Contemporaries during this lifetime</div>
+        <ul class="contemporary-list" id="contemporaryList"></ul>
+    </div>
+
+    <script>
+        const patriarchImages = {
+            "Adam": "images/01-genesis-05/adam-old.png",
+            "Seth": "images/01-genesis-05/seth-old.png",
+            "Enosh": "images/01-genesis-05/enosh-old.png",
+            "Kenan": "images/01-genesis-05/kenan-old.png",
+            "Mahalalel": "images/01-genesis-05/mahalalel-old.png",
+            "Jared": "images/01-genesis-05/jared-old.png",
+            "Enoch": "images/01-genesis-05/enoch-old.png",
+            "Methuselah": "images/01-genesis-05/methuselah-old.png",
+            "Lamech": "images/01-genesis-05/lamech-old.png",
+            "Noah": "images/01-genesis-05/noah-old.png",
+        };
+
+        const chronologies = {
+            masoretic: {
+                patriarchs: [
+                    { name: 'Adam', birth: 0, death: 930 },
+                    { name: 'Seth', birth: 130, death: 1042 },
+                    { name: 'Enosh', birth: 235, death: 1140 },
+                    { name: 'Kenan', birth: 325, death: 1235 },
+                    { name: 'Mahalalel', birth: 395, death: 1290 },
+                    { name: 'Jared', birth: 460, death: 1422 },
+                    { name: 'Enoch', birth: 622, death: 987 },
+                    { name: 'Methuselah', birth: 687, death: 1656 },
+                    { name: 'Lamech', birth: 874, death: 1651 },
+                    { name: 'Noah', birth: 1056, death: 2006 }
+                ],
+                floodYear: 1656, timelineEnd: 2006,
+                notableFacts: [
+                    '<strong>Adam lived to see 8 generations</strong> of his descendants (all except Lamech and Noah)',
+                    '<strong>Methuselah died in the year of the Flood</strong> (Year 1656) — the longest-lived human at 969 years',
+                    '<strong>Noah knew every patriarch except Adam</strong> — Adam died 126 years before Noah was born',
+                    '<strong>Enoch was translated without death</strong> at age 365, the shortest lifespan in Genesis 5',
+                    '<strong>All patriarchs before the Flood were contemporaries</strong> except Enoch (who was taken) and Adam (who died earlier)',
+                    '<strong>Lamech (Noah\'s father) died 5 years before the Flood</strong>, spared from witnessing the judgment'
+                ],
+                note: 'Standard Hebrew Bible chronology — most widely used',
+                displayName: 'Masoretic Text'
+            },
+            septuagint: {
+                patriarchs: [
+                    { name: 'Adam', birth: 0, death: 930 },
+                    { name: 'Seth', birth: 230, death: 1142 },
+                    { name: 'Enosh', birth: 435, death: 1340 },
+                    { name: 'Kenan', birth: 625, death: 1535 },
+                    { name: 'Mahalalel', birth: 795, death: 1690 },
+                    { name: 'Jared', birth: 960, death: 1922 },
+                    { name: 'Enoch', birth: 1122, death: 1487 },
+                    { name: 'Methuselah', birth: 1287, death: 2256 },
+                    { name: 'Lamech', birth: 1474, death: 2261 },
+                    { name: 'Noah', birth: 1662, death: 2612 }
+                ],
+                floodYear: 2262, timelineEnd: 2612,
+                notableFacts: [
+                    '<strong>The Septuagint adds ~100 years</strong> to most patriarchs\' begetting ages, stretching the timeline significantly',
+                    '<strong>Methuselah lived 14 years past the Flood</strong> in this chronology (Year 2256 death vs 2262 Flood)',
+                    '<strong>Lamech lived 1 year past the Flood</strong>, unlike the Masoretic where he died before',
+                    '<strong>Total time from Creation to Flood: 2,262 years</strong> (vs. 1,656 in Masoretic — 606 years longer)',
+                    '<strong>Adam and Seth never met Jared</strong> — Adam died Year 930, Jared born Year 960',
+                    '<strong>Enoch lived 365 years</strong> (same as Masoretic) but was born much later in history'
+                ],
+                note: 'Greek Old Testament — used by early Church; adds ~600 years before the Flood',
+                displayName: 'Septuagint (LXX)'
+            },
+            samaritan: {
+                patriarchs: [
+                    { name: 'Adam', birth: 0, death: 930 },
+                    { name: 'Seth', birth: 130, death: 1042 },
+                    { name: 'Enosh', birth: 235, death: 1140 },
+                    { name: 'Kenan', birth: 325, death: 1235 },
+                    { name: 'Mahalalel', birth: 395, death: 1290 },
+                    { name: 'Jared', birth: 460, death: 1422 },
+                    { name: 'Enoch', birth: 622, death: 987 },
+                    { name: 'Methuselah', birth: 687, death: 1307 },
+                    { name: 'Lamech', birth: 774, death: 1651 },
+                    { name: 'Noah', birth: 1056, death: 2006 }
+                ],
+                floodYear: 1307, timelineEnd: 2006,
+                notableFacts: [
+                    '<strong>Methuselah died the year of the Flood</strong> (Year 1307) — lifespan only 720 years (vs. 969 in Masoretic)',
+                    '<strong>The Flood came 349 years earlier</strong> than the Masoretic chronology',
+                    '<strong>Birth years match the Masoretic</strong> until Methuselah, then diverge',
+                    '<strong>Methuselah\'s lifespan is drastically shorter</strong> by 249 years compared to Masoretic',
+                    '<strong>Lamech lived 344 years past the Flood</strong>, surviving into the post-Flood world',
+                    '<strong>Similar overlap patterns to Masoretic</strong> but compressed timeline before the Flood'
+                ],
+                note: 'Samaritan Torah — similar to Masoretic but with key differences in Methuselah\'s chronology',
+                displayName: 'Samaritan Pentateuch'
+            }
+        };
+
+        let currentChronology = 'masoretic';
+        let patriarchs = chronologies.masoretic.patriarchs;
+        let TIMELINE_END = chronologies.masoretic.timelineEnd;
+        let FLOOD_YEAR = chronologies.masoretic.floodYear;
+        const BAR_HEIGHT = 44, BAR_SPACING = 16;
+        let selectedPatriarch = null, showOverlaps = false, isPrintMode = false;
+
+        function createPortraitGallery() {
+            const g = document.getElementById('portraitGallery'); g.innerHTML = '';
+            patriarchs.forEach(p => {
+                const c = document.createElement('div'); c.className = 'portrait-card'; c.dataset.name = p.name;
+                c.innerHTML = `<div class="portrait-img-wrapper"><div class="portrait-bg" style="background-image:url('${patriarchImages[p.name]}')"></div></div><div class="portrait-label">${p.name}</div><div class="portrait-years">${p.death-p.birth} years</div>`;
+                c.addEventListener('click', () => selectPatriarch(p)); g.appendChild(c);
+            });
+        }
+
+        function init() { updateNotableFacts(); createPortraitGallery(); createYearScale(); createPatriarchBars(); createFloodMarker(); setupEventListeners(); }
+
+        function updateNotableFacts() {
+            document.getElementById('notableFacts').innerHTML = chronologies[currentChronology].notableFacts.map(f => `<li class="notable-fact">${f}</li>`).join('');
+        }
+
+        function switchChronology(key) {
+            currentChronology = key; const c = chronologies[key];
+            patriarchs = c.patriarchs; TIMELINE_END = c.timelineEnd; FLOOD_YEAR = c.floodYear;
+            document.getElementById('chronologyNote').textContent = c.note;
+            document.getElementById('currentChronology').textContent = c.displayName;
+            document.querySelectorAll('.chronology-btn').forEach(b => b.classList.toggle('active', b.dataset.chronology === key));
+            updateNotableFacts(); createPortraitGallery();
+            document.getElementById('yearScale').innerHTML = ''; document.getElementById('timelineBars').innerHTML = '';
+            createYearScale(); createPatriarchBars(); createFloodMarker(); closePanel();
+        }
+
+        function createYearScale() {
+            const s = document.getElementById('yearScale'), inc = TIMELINE_END > 2500 ? 300 : 200;
+            for (let y = 0; y <= TIMELINE_END; y += inc) {
+                const m = document.createElement('div'); m.className = 'year-marker'; m.style.left = `${(y/TIMELINE_END)*100}%`;
+                m.innerHTML = `<div class="year-tick"></div><div class="year-label">${y}</div>`; s.appendChild(m);
+            }
+        }
+
+        function createPatriarchBars() {
+            const c = document.getElementById('timelineBars'); c.style.height = `${patriarchs.length*(BAR_HEIGHT+BAR_SPACING)}px`;
+            patriarchs.forEach((p, i) => {
+                const b = document.createElement('div'); b.className = 'patriarch-bar'; b.dataset.name = p.name;
+                b.style.left = `${(p.birth/TIMELINE_END)*100}%`; b.style.width = `${((p.death-p.birth)/TIMELINE_END)*100}%`;
+                b.style.top = `${i*(BAR_HEIGHT+BAR_SPACING)}px`;
+                const av = document.createElement('div'); av.className = 'bar-avatar';
+                av.innerHTML = `<div class="bar-avatar-bg" style="background-image:url('${patriarchImages[p.name]}')"></div>`; b.appendChild(av);
+                const n = document.createElement('div'); n.className = 'patriarch-name'; n.textContent = p.name; b.appendChild(n);
+                b.addEventListener('mouseenter', e => showTooltip(e, p)); b.addEventListener('mouseleave', hideTooltip);
+                b.addEventListener('mousemove', moveTooltip); b.addEventListener('click', () => selectPatriarch(p)); c.appendChild(b);
+            });
+        }
+
+        function createFloodMarker() {
+            const c = document.getElementById('timelineBars'), m = document.createElement('div');
+            m.className = 'flood-marker'; m.style.left = `${(FLOOD_YEAR/TIMELINE_END)*100}%`;
+            m.innerHTML = `<div class="flood-label">The Flood — Year ${FLOOD_YEAR}</div>`; c.appendChild(m);
+        }
+
+        function showTooltip(e, p) {
+            if (isPrintMode) return;
+            document.getElementById('tooltipName').textContent = p.name;
+            document.getElementById('tooltipAvatar').style.backgroundImage = `url('${patriarchImages[p.name]}')`;
+            document.getElementById('tooltipInfo').innerHTML = `Born: Year ${p.birth}<br>Died: Year ${p.death}<br>Lifespan: ${p.death-p.birth} years`;
+            document.getElementById('tooltip').classList.add('visible'); moveTooltip(e);
+        }
+        function hideTooltip() { document.getElementById('tooltip').classList.remove('visible'); }
+        function moveTooltip(e) { const t = document.getElementById('tooltip'); t.style.left = `${e.clientX+20}px`; t.style.top = `${e.clientY+20}px`; }
+
+        function selectPatriarch(p) {
+            if (isPrintMode) return; selectedPatriarch = p;
+            document.querySelectorAll('.portrait-card').forEach(c => c.classList.toggle('active', c.dataset.name === p.name));
+            document.querySelectorAll('.patriarch-bar').forEach(b => {
+                if (b.dataset.name === p.name) { b.classList.add('selected'); b.classList.remove('faded'); }
+                else { b.classList.remove('selected'); b.classList.add('faded'); }
+            });
+            showContemporaries(p);
+        }
+
+        function showContemporaries(p) {
+            const panel = document.getElementById('sidePanel'), list = document.getElementById('contemporaryList');
+            document.getElementById('panelHeader').textContent = p.name; list.innerHTML = '';
+            let pd = document.getElementById('panelPortrait');
+            if (!pd) { pd = document.createElement('div'); pd.id = 'panelPortrait'; pd.className = 'panel-portrait'; document.querySelector('.panel-subheader').parentNode.insertBefore(pd, document.querySelector('.panel-subheader')); }
+            pd.innerHTML = `<div class="panel-portrait-img"><div class="panel-portrait-bg" style="background-image:url('${patriarchImages[p.name]}')"></div></div><div class="panel-portrait-info"><div class="panel-years">Years ${p.birth} – ${p.death}</div><div class="panel-age">${p.death-p.birth} years</div></div>`;
+            patriarchs.filter(x => x.name !== p.name && x.birth <= p.death && x.death >= p.birth).forEach(x => {
+                const it = document.createElement('li'); it.className = 'contemporary-item';
+                const s = Math.max(p.birth, x.birth), e = Math.min(p.death, x.death);
+                it.innerHTML = `<div class="contemporary-avatar"><div class="contemporary-avatar-bg" style="background-image:url('${patriarchImages[x.name]}')"></div></div><div class="contemporary-info"><div class="contemporary-name">${x.name}</div><div class="contemporary-years">${p.name} knew ${x.name} for ${e-s} years (${s}–${e})</div></div>`;
+                list.appendChild(it);
+            });
+            panel.classList.add('visible');
+        }
+
+        function closePanel() {
+            document.getElementById('sidePanel').classList.remove('visible'); selectedPatriarch = null;
+            document.querySelectorAll('.patriarch-bar').forEach(b => b.classList.remove('selected','faded'));
+            document.querySelectorAll('.portrait-card').forEach(c => c.classList.remove('active'));
+        }
+
+        function togglePrintMode() {
+            isPrintMode = !isPrintMode; document.body.classList.toggle('print-mode', isPrintMode);
+            document.getElementById('printBtn').textContent = isPrintMode ? 'Color View' : 'Print-Friendly View';
+        }
+
+        function exportAsPDF() {
+            const was = isPrintMode; if (!isPrintMode) document.body.classList.add('print-mode');
+            setTimeout(() => { window.print(); setTimeout(() => { if (!was) document.body.classList.remove('print-mode'); }, 100); }, 100);
+        }
+
+        function setupEventListeners() {
+            document.querySelectorAll('.chronology-btn').forEach(b => b.addEventListener('click', () => switchChronology(b.dataset.chronology)));
+            document.getElementById('exportBtn').addEventListener('click', exportAsPDF);
+            document.getElementById('printBtn').addEventListener('click', togglePrintMode);
+            document.getElementById('closePanel').addEventListener('click', closePanel);
+            document.addEventListener('click', e => {
+                const panel = document.getElementById('sidePanel');
+                if (panel.classList.contains('visible') && !panel.contains(e.target) && !Array.from(document.querySelectorAll('.patriarch-bar')).some(b => b.contains(e.target))) closePanel();
+            });
+        }
+
+        init();
+    </script>
+    <footer class="site-footer">
+        <span class="footer-ornament">✦ ✦ ✦</span>
+        Scripture from the New King James Version®. Copyright © 1982 by Thomas Nelson.<br>
+        Developed by <a href="about.html#chrisnwasike">Chris Nwasike</a>
+    </footer>
+
+
+</body>
+</html>
