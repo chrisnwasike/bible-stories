@@ -119,7 +119,7 @@
     .day-nav-btn.active { color: var(--gold); border-bottom-color: var(--gold); background: rgba(184,149,63,0.08); }
 
     /* ── Main Content ── */
-    .chapter-content { max-width: 1200px; margin: 0 auto; padding: var(--space-lg); }
+    .chapter-content { max-width: 95%; margin: 0 auto; padding: var(--space-lg); }
     body.print-mode .chapter-content { padding: 20px; }
 
     /* ── Structure Overview ── */
@@ -176,7 +176,7 @@
         padding: var(--space-2xl) var(--space-xl);
         position: relative;
         min-height: calc(100vh - 40px);
-        max-width: 1200px;
+        max-width: 100%;
         margin: 0 auto;
         display: flex;
         flex-direction: column;
@@ -211,31 +211,31 @@
     /* Background images with gradients */
     .day-section[data-day="1"]::before {
         background: linear-gradient(rgba(10,8,6,0.7), rgba(20,16,12,0.6)), 
-                    url('images/01-genesis-01/day-one-light.png');
+                    center / cover no-repeat url('images/01-genesis-01/day-one-light.png');
     }
     .day-section[data-day="2"]::before {
-        background: linear-gradient(rgba(26,20,14,0.65), rgba(42,35,24,0.5)), 
-                    url('images/01-genesis-01/day-two-waters.png');
+        background: linear-gradient(rgba(26,20,14,0.65), rgba(42,35,24,0.5)),
+                    center / cover no-repeat url('images/01-genesis-01/day-two-waters.png');
     }
     .day-section[data-day="3"]::before {
         background: linear-gradient(rgba(58,48,34,0.5), rgba(75,62,44,0.35)), 
-                    url('images/01-genesis-01/day-three-land.png');
+                    center / cover no-repeat url('images/01-genesis-01/day-three-land.png');
     }
     .day-section[data-day="4"]::before {
         background: linear-gradient(rgba(90,76,54,0.4), rgba(107,88,62,0.25)), 
-                    url('images/01-genesis-01/day-four-celestial.png');
+                    center / cover no-repeat url('images/01-genesis-01/day-four-celestial.png');
     }
     .day-section[data-day="5"]::before {
         background: linear-gradient(rgba(120,98,70,0.3), rgba(138,116,82,0.2)), 
-                    url('images/01-genesis-01/day-five-creatures.png');
+                    center / cover no-repeat url('images/01-genesis-01/day-five-creatures.png');
     }
     .day-section[data-day="6"]::before {
         background: linear-gradient(rgba(152,130,94,0.25), rgba(168,144,106,0.15)), 
-                    url('images/01-genesis-01/day-six-creation.png');
+                    center / cover no-repeat url('images/01-genesis-01/day-six-creation.png');
     }
     .day-section[data-day="7"]::before {
         background: linear-gradient(rgba(245,239,227,0.3), rgba(250,247,240,0.4)), 
-                    url('images/01-genesis-01/day-seven-sabbath.png');
+                    center / cover no-repeat url('images/01-genesis-01/day-seven-sabbath.png');
     }
 
     /* Content layer above parallax background */
@@ -259,6 +259,9 @@
     /* Day Header with Emergence Animation */
     .day-header {
         text-align: center;
+        min-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
         margin-bottom: var(--space-lg);
         padding: var(--space-lg) var(--space-md);
         background: rgba(0, 0, 0, 0.4);
@@ -314,6 +317,10 @@
         font-family: var(--font-body);
         font-size: 19px;
         line-height: 2;
+            width: 50%;
+    min-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
         padding: var(--space-xl);
         background: rgba(0, 0, 0, 0.3);
         border-radius: var(--radius);
@@ -344,7 +351,6 @@
 
     /* Verse Reveal Animation */
     .verse {
-        margin-bottom: var(--space-md);
         opacity: 0;
         transform: translateX(-20px);
         transition: opacity 0.8s ease-out, transform 0.8s ease-out;
@@ -795,7 +801,7 @@
             const day = btn.dataset.day;
             const section = document.querySelector(`.day-section[data-day="${day}"]`);
             if (section) {
-                const offset = 60;
+                const offset = 40;
                 const top = section.offsetTop - offset;
                 window.scrollTo({ top, behavior: 'smooth' });
             }
