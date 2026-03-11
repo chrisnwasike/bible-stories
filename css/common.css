@@ -191,6 +191,55 @@ footer a:hover {
 }
 
 /* ═══════════════════════════════
+   Resources Bar
+   Sits below site nav on chapter / TOC pages
+   when the page declares book-level resources
+   ═══════════════════════════════ */
+.resources-bar {
+    background: #0e0c09;
+    border-bottom: 1px solid rgba(184, 149, 63, 0.10);
+    padding: 9px var(--space-lg);
+}
+.resources-bar-inner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+.resources-label {
+    font-family: var(--font-heading);
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(245, 239, 227, 0.22);
+    padding-right: 12px;
+    border-right: 1px solid rgba(184, 149, 63, 0.12);
+    white-space: nowrap;
+    margin-right: 2px;
+}
+.resource-link {
+    display: inline-block;
+    padding: 4px 14px;
+    border: 1px solid rgba(184, 149, 63, 0.20);
+    border-radius: 2px;
+    font-family: var(--font-heading);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(245, 239, 227, 0.50);
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+    white-space: nowrap;
+}
+.resource-link:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: rgba(184, 149, 63, 0.06);
+}
+
+/* ═══════════════════════════════
    Responsive
    ═══════════════════════════════ */
 @media (max-width: 768px) {

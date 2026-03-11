@@ -38,8 +38,8 @@
     <meta name="theme-color" content="#0e0c09">
 
     <title>The Bible — Brought to Life</title>
-    <link rel="stylesheet" href="css/common.css">
     
+    <link rel="stylesheet" href="css/common.css">
 </head>
 <body>
 
@@ -87,8 +87,9 @@
 
     .books-preview { background: linear-gradient(175deg, #1e1a14 0%, #2a2318 50%, #1b1710 100%); padding: var(--space-2xl) var(--space-lg); }
     .books-heading { text-align: center; font-family: var(--font-heading); font-size: 13px; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); margin-bottom: var(--space-xl); }
-    .books-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-md); max-width: 900px; margin: 0 auto var(--space-xl); }
-    .book-card { padding: var(--space-xs); border: 1px solid rgba(184,149,63,0.12); text-align: center; transition: all 0.4s ease; text-decoration: none; display: block; }
+    .books-testament { max-width: 900px; margin: 0 auto var(--space-md); font-family: var(--font-heading); font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: rgba(245,239,227,0.2); padding-bottom: 10px; border-bottom: 1px solid rgba(184,149,63,0.08); }
+    .books-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: var(--space-md); max-width: 900px; margin: 0 auto var(--space-xl); }
+    .book-card { padding: var(--space-md) var(--space-xs); border: 1px solid rgba(184,149,63,0.12); text-align: center; transition: all 0.4s ease; text-decoration: none; display: block; }
     .book-card:hover { border-color: rgba(184,149,63,0.35); background: rgba(184,149,63,0.04); transform: translateY(-3px); }
     .book-card.active { border-color: var(--gold); background: rgba(184,149,63,0.06); }
     .book-card-name { font-family: var(--font-heading); font-size: 20px; color: var(--parchment); margin-bottom: 6px; }
@@ -130,6 +131,8 @@
 
 <section class="books-preview">
     <div class="books-heading">The Books</div>
+
+    <div class="books-testament">Old Testament</div>
     <div class="books-grid">
         <a href="toc.html" class="book-card active">
             <div class="book-card-name">Genesis</div>
@@ -141,6 +144,20 @@
         <div class="book-card coming-soon"><div class="book-card-name">Numbers</div><div class="book-card-chapters">36 chapters</div><div class="book-card-status">Coming Soon</div></div>
         <div class="book-card coming-soon"><div class="book-card-name">Deuteronomy</div><div class="book-card-chapters">34 chapters</div><div class="book-card-status">Coming Soon</div></div>
     </div>
+
+    <div class="books-testament">New Testament</div>
+    <div class="books-grid">
+        <a href="john-toc.html" class="book-card active">
+            <div class="book-card-name">John</div>
+            <div class="book-card-chapters">21 chapters</div>
+            <div class="book-card-status">In Progress</div>
+        </a>
+        <div class="book-card coming-soon"><div class="book-card-name">Matthew</div><div class="book-card-chapters">28 chapters</div><div class="book-card-status">Coming Soon</div></div>
+        <div class="book-card coming-soon"><div class="book-card-name">Mark</div><div class="book-card-chapters">16 chapters</div><div class="book-card-status">Coming Soon</div></div>
+        <div class="book-card coming-soon"><div class="book-card-name">Luke</div><div class="book-card-chapters">24 chapters</div><div class="book-card-status">Coming Soon</div></div>
+        <div class="book-card coming-soon"><div class="book-card-name">Romans</div><div class="book-card-chapters">16 chapters</div><div class="book-card-status">Coming Soon</div></div>
+    </div>
+
     <div class="books-cta"><a href="toc.html">View Table of Contents</a></div>
 </section>
     <footer class="site-footer-dark">
